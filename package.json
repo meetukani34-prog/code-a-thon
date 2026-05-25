@@ -1,0 +1,11 @@
+{
+  "name": "aegis-ai-root",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build"
+  },
+  "dependencies": {
+    "cloudinary": "^2.10.0"
+  }
+}
