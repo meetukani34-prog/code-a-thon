@@ -420,3 +420,48 @@ body { font-family: var(--font); background: var(--bg-root); color: var(--text-1
   .flex-1 { max-height: unset; }
 }
 
+/* ══════════════════════════════════════════════════════════════════════════
+   LANDING PAGE — Full Redesign
+   ══════════════════════════════════════════════════════════════════════════ */
+.landing { width: 100%; min-height: 100vh; display: flex; flex-direction: column; }
+
+/* Header */
+.landing-header { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; position: sticky; top: 0; z-index: 100; background: rgba(9, 9, 11, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.landing-header__logo { font-size: 20px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+.logo-mark { color: var(--accent); font-size: 24px; }
+.landing-header__nav { display: flex; align-items: center; gap: 32px; }
+.landing-header__nav a { color: var(--text-2); text-decoration: none; font-size: 14px; font-weight: 500; transition: color var(--ease); }
+.landing-header__nav a:hover { color: var(--text-1); }
+.btn-small { padding: 8px 16px; font-size: 13px; font-weight: 600; border-radius: var(--radius-sm); background: var(--text-1); color: var(--bg-root); border: none; cursor: pointer; transition: all var(--ease); }
+.btn-small:hover { background: #E4E4E7; transform: translateY(-1px); }
+
+/* Hero */
+.landing-hero { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 100px 20px 60px; position: relative; text-align: center; }
+.landing-hero::before { content: ''; position: absolute; top: -20%; left: 10%; width: 60vw; height: 60vw; max-width: 800px; max-height: 800px; background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 60%); pointer-events: none; z-index: 0; }
+.landing-hero__content { position: relative; z-index: 1; max-width: 800px; margin-bottom: 60px; animation: fadeUp 600ms ease; }
+.landing-hero__title { font-size: 64px; font-weight: 900; letter-spacing: -2px; line-height: 1.1; margin-bottom: 24px; background: linear-gradient(135deg, #FFF 30%, #A1A1AA 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.landing-hero__subtitle { font-size: 18px; color: var(--text-3); line-height: 1.6; max-width: 600px; margin: 0 auto; }
+
+/* Features */
+.landing-features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; padding: 80px 40px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+.feature-card { background: var(--glass); border: 1px solid var(--glass-border); border-radius: var(--radius-xl); padding: 40px 32px; transition: all 400ms var(--spring); }
+.feature-card:hover { border-color: var(--border-light); transform: translateY(-4px); background: rgba(24,24,27,0.7); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
+.feature-icon { font-size: 32px; margin-bottom: 20px; }
+.feature-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 12px; color: var(--text-1); }
+.feature-card p { font-size: 14px; color: var(--text-3); line-height: 1.6; }
+
+/* Footer */
+.landing-footer { border-top: 1px solid var(--border); padding: 40px; margin-top: auto; }
+.footer-content { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.footer-brand { font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; color: var(--text-2); }
+.footer-links { display: flex; gap: 16px; font-size: 13px; color: var(--text-3); align-items: center; }
+.footer-divider { color: var(--border); }
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .landing-hero__title { font-size: 48px; }
+  .landing-features { grid-template-columns: 1fr; }
+  .landing-header { flex-direction: column; gap: 16px; padding: 20px; }
+  .landing-header__nav { width: 100%; justify-content: space-between; }
+  .footer-content { flex-direction: column; gap: 24px; text-align: center; }
+}
